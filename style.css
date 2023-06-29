@@ -1,0 +1,108 @@
+ *{
+  background-color: rgb(5, 0, 19);
+ }
+ .container {
+   text-align: center;
+ }
+
+ .content {
+   display: inline-block;
+   position: relative;
+   z-index: 3;
+   text-align: center;
+   font-size: 0;
+   perspective: 2400px;
+   perspective-origin: 50% 100%;
+   opacity: 0;
+   transition: 500ms opacity;
+ }
+
+ .content.loaded {
+   opacity: 1;
+ }
+
+ .content .part .top,
+ .content .part .bottom {
+   position: absolute;
+   top: 0;
+   left: 0;
+ }
+
+ .content .part.top {
+   transform: translate3d(0, 0, 0) rotateX(-90deg);
+ }
+
+ .content:hover .part.top {
+   transform: translate3d(0, 0, 0) rotateX(0deg);
+ }
+
+ .content .part {
+   display: inline-block;
+   position: relative;
+   transform-style: preserve-3d;
+   transform-origin: 50% 100%;
+   transition: 900ms;
+ }
+
+ .content.opened .part .top {
+   transform: translate3d(0, 0, -11px) rotateX(90deg) scale(1, 1);
+ }
+
+ .content .part .top {
+   transform-origin: 50% 0;
+   transform: translate3d(0, 0, -11px) rotateX(90deg);
+   transition: 900ms;
+ }
+
+ .content img {
+   display: block;
+   max-width: 100%;
+   backface-visibility: hidden;
+ }
+
+ .content .part .cover {
+   position: relative;
+ }
+
+ .content .screen {
+   display: block;
+   position: absolute;
+   top: 3.7%;
+   left: 1%;
+   width: 98%;
+   backface-visibility: hidden;
+   transform: translate3d(0, 0, 1px);
+ }
+
+ .logo {
+  display: block;  
+  position: absolute;
+  background-color: #000;
+  top: 94.5%;
+  left:43.5%;
+  margin-right: auto;
+  width: 14%;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 1px);
+}
+.dot {
+  position: absolute;
+  top: 1%;
+  height: 9px;
+  width: 9px;
+  color: #1b1b1b;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+ .content .part.bottom {
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform: translate3d(0, 0, 0) rotateX(-90deg);
+ }
+
+ .content .part .bottom {
+   transform-origin: 50% 0;
+   transform: translate3d(0, 0, 0) rotateX(90deg);
+ }
